@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled, {css} from 'styled-components'
 import bag from '../assets/img/bag-09.svg'
 import pencil from '../assets/img/pencil.svg'
@@ -14,7 +14,7 @@ const ProgressBar = styled.div`
   height: 5px;
   background-color: #51aef2;
    ${props => props.per && css`
-    width: ${props.per}
+    width: ${props.per};
 
   `}
 `;
@@ -234,8 +234,10 @@ const CardStyles = styled.div`
 
 `;
 
-const Card = ({spent, budget, title, percentage}) => (
-  <CardStyles>
+const Card = ({ spent, budget, title, percentage }) => {
+
+  return (
+    <CardStyles>
     <div class="dashboard-section">
       <div class="card">
         <div class="card-grid">
@@ -257,8 +259,8 @@ const Card = ({spent, budget, title, percentage}) => (
           <div class="edit-wrapper">
             <a href="#" class="icon-link w-inline-block"
             ><img
-                src={pencil}
-                width="60"
+            src={pencil}
+            width="60"
                 alt=""
                 class="image-2" /></a
             ><a href="#" class="icon-link w-inline-block"
@@ -267,12 +269,13 @@ const Card = ({spent, budget, title, percentage}) => (
                 width="67"
                 alt=""
                 class="image-3"
-              /></a>
+                /></a>
           </div>
         </div>
       </div>
     </div>
   </CardStyles>
 );
+              }
 
 export default Card;

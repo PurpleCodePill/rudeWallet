@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from './Card'
 
 
-const Cards = ({items}) => {
+const Cards = ({ items }) => {
+  
   const calc = (spent,budget) => {
-    return Math.floor((spent / budget) * 100);
+    return `${Math.floor((spent / budget) * 100)}`;
+    
   }
 
   return(

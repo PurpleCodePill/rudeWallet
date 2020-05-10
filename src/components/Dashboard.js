@@ -18,7 +18,7 @@ const ProgressBar = styled.div`
 `;
 
 const Test = styled.div`  
-background: #f4f4f4;
+background: #EFF1F6;
 .dashboard-section {
   display: flex;
   width: 100vw;
@@ -94,7 +94,7 @@ background: #f4f4f4;
   -webkit-flex: 0 auto;
   -ms-flex: 0 auto;
   flex: 0 auto;
-  background-color: #e8e8e8;
+  background-color: #EFF1F6;
 }
 
 
@@ -117,7 +117,7 @@ background: #f4f4f4;
 `;
 
 const Wrapper = styled.div`
-background: #f4f4f4;
+background: #EFF1F6;
 height: 100vh;
 margin: auto;
 overflow: hidden;
@@ -149,6 +149,7 @@ function App( {items ,budget, spent, per} ) {
               </div>
             </div>
           </div>
+          <hr/>
         </Test>
       <Cards items={items} />
     </Wrapper>

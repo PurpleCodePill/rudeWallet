@@ -3,7 +3,7 @@ import React from 'react'
 function About() {
   return (
     <div className="bg-red">
-      aur btao
+      <h1>404</h1>
     </div>
   )
 }

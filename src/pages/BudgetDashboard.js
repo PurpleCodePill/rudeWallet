@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import Item from "../components/Item";
+import Add from "../components/Add"
 import Dashboard from '../components/Dashboard'
 
 function BudgetDashboard() {
-  const items = [
+  const defitems = [
     {
       title: "food",
       spent: 30,
@@ -15,9 +16,14 @@ function BudgetDashboard() {
       budget: 80,
     },
   ];
-  
+  const [items, setItems] = useState(defitems)
+
   const calc = (spent,budget) => {
     return Math.floor((spent / budget) * 100);
+  }
+
+  const addItem = (item) => {
+    setItems(...items, item)
   }
 
   let totalSpent = 0
@@ -25,11 +31,14 @@ function BudgetDashboard() {
   items.forEach(item => {
     totalBudget += item.budget;
     totalSpent += item.spent;
+    console.log(items);
+    
   })
 
   return (
     <div>
-      <Dashboard items={items} budget={totalBudget} spent={totalSpent} per={calc(totalSpent, totalBudget)} />
+      {/* <Add handleSubmit={addNew}/> */}
+      <Dashboard items={items} budget={totalBudget} spent={totalSpent} per={calc(totalSpent, totalBudget)} addItem={addItem} />
     </div>
   );
 }
